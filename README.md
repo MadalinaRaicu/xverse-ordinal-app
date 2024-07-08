@@ -4,11 +4,7 @@ This is a React application for looking up Bitcoin wallet addresses to display t
 
 <img width="388" alt="image" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/d9647015-4388-47dd-89c3-abe160aae3b9">
 
-<img width="387" alt="image" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/e738d58d-7c6d-4c6d-8ede-11f5f5f1086b">
-
 <img width="386" alt="image" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/90ea638f-ef6f-4fe4-96e7-6f0d755036ab">
-
-<img width="388" alt="image" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/8399ee75-b320-4d16-b241-616d75d2e75f">
 
 ## Features
 
