@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { fetchOrdinalUtxos } from '../services/api';
 import OrdinalList from '../components/OrdinalList';
-import { TextField, Button, Container } from '@mui/material';
 import type { Utxo } from '../types/types';
 
 const Home = () => {
@@ -22,31 +21,36 @@ const Home = () => {
   };
 
   return (
-    <Container>
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label='Bitcoin Wallet Address'
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          fullWidth
-          margin='normal'
-          placeholder='Enter a Bitcoin wallet address to lookup ordinals'
-        />
-
-        <Button
-          type='submit'
-          variant='contained'
-          color='primary'
+    <div className='min-h-screen bg-gray-900 text-white font-montserrat'>
+      <div className='container mx-auto py-12 w-full flex flex-col gap-4'>
+        <form
+          onSubmit={handleSubmit}
+          className='flex flex-col gap-2.5 w-full'
         >
-          Lookup Ordinals
-        </Button>
-      </form>
-      {error && <p>{error}</p>}
-      <OrdinalList
-        utxos={utxos}
-        address={address}
-      />
-    </Container>
+          <span className='text-sm md:text-base font-medium'>
+            Owner Bitcoin Address:
+          </span>
+          <input
+            type='text'
+            className='w-full p-2 bg-gray-800 text-white rounded text-base'
+            placeholder='Enter a Bitcoin wallet address'
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <button
+            type='submit'
+            className='w-full p-2 bg-primary rounded-lg text-sm md:text-base font-medium'
+          >
+            Look up
+          </button>
+        </form>
+        {error && <p className='text-red-500 mt-4'>{error}</p>}
+        <OrdinalList
+          utxos={utxos}
+          address={address}
+        />
+      </div>
+    </div>
   );
 };
 

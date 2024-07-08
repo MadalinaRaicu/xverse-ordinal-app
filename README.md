@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Xverse Ordinals App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application for looking up Bitcoin wallet addresses to display their ordinal inscriptions. The application fetches data using the Xverse API and displays the details of ordinal inscriptions, including handling different content types such as images and text.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Input a Bitcoin wallet address to look up ordinal inscriptions.
+- Display a paginated list of ordinal inscriptions.
+- View detailed information of individual ordinal inscriptions, including content.
+- Dark theme with responsive design.
 
-### `npm start`
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Clone the repository:**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+git clone <repository_url>
+cd ordinals-app
+```
 
-### `npm test`
+2. **Install dependencies:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install
+```
 
-### `npm run build`
+3. **Run the application:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This will start the development server and open the application in your default browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Technologies Used
 
-### `npm run eject`
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Axios**: Promise-based HTTP client for making API requests.
+- **React Router**: Declarative routing for React applications.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### API Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The application uses the following API endpoints from the Xverse API:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Fetch UTXOs containing inscriptions:**
+  ```
+  GET https://api-3.xverse.app/v1/address/:address/ordinal-utxo
+  ```
+  Example: `https://api-3.xverse.app/v1/address/bc1pe6y27ey6gzh6p0j250kz23zra7xn89703pvmtzx239zzstg47j3s3vdvvs/ordinal-utxo`
 
-## Learn More
+- **Fetch details of a specific inscription:**
+  ```
+  GET https://api-3.xverse.app/v1/address/:address/ordinals/inscriptions/:inscriptionId
+  ```
+  Example: `https://api-3.xverse.app/v1/address/bc1pe6y27ey6gzh6p0j250kz23zra7xn89703pvmtzx239zzstg47j3s3vdvvs/ordinals/inscriptions/9a2315da257d6c1010157bec4fecb20472666055ed79cd7462c28cf15b298522i0`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

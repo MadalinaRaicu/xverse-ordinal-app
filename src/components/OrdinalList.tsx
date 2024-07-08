@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { List, ListItem, ListItemText, Button } from '@mui/material';
 import type { Utxo } from '../types/types';
+import { Chevron } from './ui-toolkit/Chevron';
 
 const OrdinalList = ({
   utxos,
@@ -16,30 +16,38 @@ const OrdinalList = ({
     setPage(page + 1);
   };
 
-  console.log({ utxos });
+  if (!utxos || utxos.length === 0) {
+    return null;
+  }
 
   return (
-    <div>
-      <List>
+    <div className='flex flex-col gap-3 w-full text-sm md:text-base font-medium'>
+      <span className='px-2'>Results:</span>
+      <div className='flex flex-col w-full'>
         {utxos?.slice(0, page * 10).map((utxo, index) => (
-          <ListItem
+          <Link
+            to={`/inscription/${address}/${utxo.inscriptions[0].id}`}
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             key={index}
-            component={Link}
-            to={`/inscription/${address}/${utxo.inscriptions[0].id}`}
+            className='text-white py-2.5 flex gap-3 items-center justify-between hover:bg-gray-800 px-2 rounded-lg'
           >
-            <ListItemText primary={utxo.txid} />
-          </ListItem>
+            <span className='[word-break:break-word]'>
+              Inscription&nbsp; {utxo.txid}
+            </span>
+            <span className='shrink-0'>
+              <Chevron />
+            </span>
+          </Link>
         ))}
-      </List>
+      </div>
       {utxos.length > page * 10 && (
-        <Button
+        <button
+          type='button'
           onClick={handleLoadMore}
-          variant='contained'
-          color='secondary'
+          className='w-full p-2 mt-4 bg-primary rounded-lg'
         >
           Load More
-        </Button>
+        </button>
       )}
     </div>
   );
