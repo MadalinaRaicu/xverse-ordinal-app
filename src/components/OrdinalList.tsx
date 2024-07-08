@@ -26,12 +26,11 @@ const OrdinalList = ({
     <div className='flex flex-col gap-3 w-full text-sm md:text-base font-medium'>
       <span className='px-2'>Results:</span>
       <div className='flex flex-col w-full'>
-        {inscriptions?.slice(0, page * 10).map((inscription, index) => {
+        {inscriptions?.slice(0, page * 10).map((inscription) => {
           return (
             <Link
               to={`/inscription/${address}/${inscription.id}`}
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              key={index}
+              key={inscription.id}
               className='text-white py-2.5 flex gap-3 items-center justify-between hover:bg-gray-800 px-2 rounded-lg'
             >
               <span className='[word-break:break-word]'>

@@ -2,7 +2,6 @@ import React from 'react';
 
 export const Chevron = ({ className }: { className?: string }) => {
   return (
-    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg
       width='9'
       height='16'
@@ -11,6 +10,7 @@ export const Chevron = ({ className }: { className?: string }) => {
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >
+      <title>Chevron</title>
       <path
         d='M1 1L8 8L1 15'
         stroke='white'
