@@ -87,6 +87,11 @@ The application uses the following API endpoints from the Xverse API:
    - Improve the UI with more advanced components and animations for a better user experience.
    - Implement a light theme option, allowing users to switch between dark and light themes.
 
+6. **Enhanced image quality**
+   - Implement functionality to load higher resolution images for inscriptions to improve visual quality.
+   - Utilize progressive image loading techniques to enhance performance and user experience, ensuring that images load smoothly and efficiently.
+   - Introduce support for modern image formats like WebP, which offer better compression and quality compared to traditional formats like JPEG and PNG.
+
 ## Trade-offs
 
 1. **Development Speed vs. Performance:**
