@@ -4,9 +4,8 @@ import OrdinalList from '../components/OrdinalList';
 import type { Utxo } from '../types/types';
 
 const Home = () => {
-  const [address, setAddress] = useState(
-    'bc1pe6y27ey6gzh6p0j250kz23zra7xn89703pvmtzx239zzstg47j3s3vdvvs'
-  );
+  // This is a test address and it is added as default value for testing purposes.
+  const [address, setAddress] = useState('');
   const [utxos, setUtxos] = useState<Utxo[]>([]);
   const [error, setError] = useState<string>();
 

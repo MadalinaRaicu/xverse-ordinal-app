@@ -16,7 +16,6 @@ export const fetchOrdinalUtxos = async (address) => {
 export const fetchInscriptionDetails = async (address, inscriptionId) => {
     try {
         const response = await axios.get<Details>(`${API_BASE_URL}/address/${address}/ordinals/inscriptions/${inscriptionId}`);
-        console.log('response', response);
         return response.data;
     } catch (error) {
         console.error('Error fetching inscription details:', error);
