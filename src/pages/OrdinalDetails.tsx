@@ -29,13 +29,15 @@ const OrdinalDetails = () => {
   const isImage = details.content_type.startsWith('image/');
 
   return (
-    <div className='min-h-screen bg-gray-900 text-white font-montserrat text-sm md:text-base font-medium'>
+    <div className='min-h-screen bg-dark text-white font-montserrat text-sm md:text-base font-medium'>
       <div className='container mx-auto py-12 w-full flex flex-col gap-4'>
         <div className='flex items-center justify-between text-sm md:text-base font-medium'>
           <Link to='/'>
             <Chevron className='rotate-180' />
           </Link>
-          <span>Details</span>
+          <h1 className='text-center text-lg md:text-base font-medium'>
+            Details
+          </h1>
           <span> </span>
         </div>
 

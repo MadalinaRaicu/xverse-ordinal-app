@@ -19,8 +19,11 @@ const Home = () => {
   };
 
   return (
-    <div className='min-h-screen bg-gray-900 text-white font-montserrat'>
+    <div className='min-h-screen bg-dark text-white font-montserrat'>
       <div className='container mx-auto py-12 w-full flex flex-col gap-4'>
+        <h1 className='text-center text-lg md:text-base font-medium'>
+          Ordinal Inscription Lookup
+        </h1>
         <form
           onSubmit={handleSubmit}
           className='flex flex-col gap-2.5 w-full'
