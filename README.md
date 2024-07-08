@@ -2,9 +2,10 @@
 
 This is a React application for looking up Bitcoin wallet addresses to display their ordinal inscriptions. The application fetches data using the Xverse API and displays the details of ordinal inscriptions, including handling different content types such as images and text.
 
-<img width="388" alt="image" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/d9647015-4388-47dd-89c3-abe160aae3b9">
+<img width="387" alt="Screenshot 2024-07-08 at 15 18 51" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/ccdf33a3-c588-425d-9e5d-1dd31e539171">
 
-<img width="386" alt="image" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/90ea638f-ef6f-4fe4-96e7-6f0d755036ab">
+<img width="389" alt="Screenshot 2024-07-08 at 15 19 16" src="https://github.com/MadalinaRaicu/xverse-ordinal-app/assets/16125548/e3f875e1-4348-439d-8473-51ac7fe5be44">
+
 
 ## Features
 
