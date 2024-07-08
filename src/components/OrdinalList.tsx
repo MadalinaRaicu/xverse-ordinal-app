@@ -20,25 +20,29 @@ const OrdinalList = ({
     return null;
   }
 
+  const inscriptions = utxos.flatMap((utxo) => utxo.inscriptions);
+
   return (
     <div className='flex flex-col gap-3 w-full text-sm md:text-base font-medium'>
       <span className='px-2'>Results:</span>
       <div className='flex flex-col w-full'>
-        {utxos?.slice(0, page * 10).map((utxo, index) => (
-          <Link
-            to={`/inscription/${address}/${utxo.inscriptions[0].id}`}
-            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-            key={index}
-            className='text-white py-2.5 flex gap-3 items-center justify-between hover:bg-gray-800 px-2 rounded-lg'
-          >
-            <span className='[word-break:break-word]'>
-              Inscription&nbsp; {utxo.txid}
-            </span>
-            <span className='shrink-0'>
-              <Chevron />
-            </span>
-          </Link>
-        ))}
+        {inscriptions?.slice(0, page * 10).map((inscription, index) => {
+          return (
+            <Link
+              to={`/inscription/${address}/${inscription.id}`}
+              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              key={index}
+              className='text-white py-2.5 flex gap-3 items-center justify-between hover:bg-gray-800 px-2 rounded-lg'
+            >
+              <span className='[word-break:break-word]'>
+                Inscription&nbsp; {inscription.id.slice(0, 10)}...
+              </span>
+              <span className='shrink-0'>
+                <Chevron />
+              </span>
+            </Link>
+          );
+        })}
       </div>
       {utxos.length > page * 10 && (
         <button

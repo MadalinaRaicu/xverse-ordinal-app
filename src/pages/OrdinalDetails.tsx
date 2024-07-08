@@ -46,7 +46,11 @@ const OrdinalDetails = () => {
             className='w-full h-auto object-contain max-h-[375px]'
           />
         ) : (
-          <pre>{details.output}</pre>
+          <div className='flex flex-col gap-2'>
+            <span className='[word-break:break-word] p-3 rounded-lg bg-gray-800'>
+              Output (Not an image)
+            </span>
+          </div>
         )}
 
         <div className='flex flex-col gap-12'>
